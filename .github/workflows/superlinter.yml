@@ -28,5 +28,5 @@ jobs:
       with:
         server: hosting201883.a2f36.netcup.net
         username: ${{ secrets.FTPUSERNAME }}
-        password: ${{ secrets.ftp_password }}
+        password: ${{ secrets.FTPPASSWORD }}
         server-dir: david-schuchert.de/httpdocs/david-schuchert.de/testdir/
