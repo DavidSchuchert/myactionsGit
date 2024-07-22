@@ -1,3 +1,3 @@
-function testlint() {
-  alert("Suppe");
+function testlint () {
+  alert('Suppe');
 }
