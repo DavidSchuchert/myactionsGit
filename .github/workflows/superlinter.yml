@@ -22,4 +22,4 @@ jobs:
           protocol: ftp
           server-dir: /test/
           timeout: 120
-          security: "false"  # Explizit unverschlüsselt
+          security: "loose"  # Explizit auf "loose" setzen
