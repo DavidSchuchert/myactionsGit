@@ -19,7 +19,6 @@ jobs:
           server: hosting201883.a2f36.netcup.net
           username: ${{ secrets.FTPUSERNAME }}
           password: ${{ secrets.FTPPASSWORD }}
-          protocol: ftp
           server-dir: /test/
-          timeout: 120
-          log-level: verbose
+          protocol: ftps
+          port: 21
