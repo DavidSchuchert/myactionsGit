@@ -1,4 +1,4 @@
-function testlint {
+function testlint() {
 
 alert('Suppe');
 
