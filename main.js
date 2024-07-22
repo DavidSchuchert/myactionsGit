@@ -1,5 +1,3 @@
 function testlint() {
-
-alert('Suppe');
-
-};
+  alert("Suppe");
+}
