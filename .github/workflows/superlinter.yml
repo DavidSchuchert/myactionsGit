@@ -13,13 +13,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Install lftp
+        run: sudo apt-get install -y lftp
+
+      - name: Test FTP Connection
+        run: |
+          lftp -e "open -u ${{ secrets.FTPUSERNAME }},${{ secrets.FTPPASSWORD }} ftp://hosting201883.a2f36.netcup.net; ls; bye"
+
       - name: Deploy over FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: hosting201883.a2f36.netcup.net
-          username: ${{ secrets.FTPUSERNAME }}
-          password: ${{ secrets.FTPPASSWORD }}
-          protocol: ftp
-          server-dir: /test/
-          timeout: 120
-          security: "loose"  # Explizit auf "loose" setzen
+        run: |
+          lftp -e "open -u ${{ secrets.FTPUSERNAME }},${{ secrets.FTPPASSWORD }} ftp://hosting201883.a2f36.netcup.net; mirror -R ./ /test/; bye"
