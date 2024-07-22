@@ -14,12 +14,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Deploy over FTP
-        uses: lukaszraczylo/ftp-deploy@v1.0.0
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          ftp-server: ftp://hosting201883.a2f36.netcup.net
-          ftp-username: ${{ secrets.FTPUSERNAME }}
-          ftp-password: ${{ secrets.FTPPASSWORD }}
-          local-dir: .
+          server: hosting201883.a2f36.netcup.net
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftp
           server-dir: /test/
+          timeout: 120
           log-level: verbose
-          dry-run: false
