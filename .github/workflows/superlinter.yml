@@ -32,4 +32,4 @@ jobs:
 
       - name: Deploy over FTP
         run: |
-          lftp -e "set ssl:verify-certificate no; open -u ${{ secrets.FTPUSERNAME }},${{ secrets.FTPPASSWORD }} ftp://hosting201883.a2f36.netcup.net; mirror -R --exclude .git/ ./ /test/; bye"
+          lftp -e "set ssl:verify-certificate no; open -u ${{ secrets.FTPUSERNAME }},${{ secrets.FTPPASSWORD }} ftp://hosting201883.a2f36.netcup.net; mirror -R --exclude .github/ ./ /test/; bye"
