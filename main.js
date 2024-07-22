@@ -1,0 +1,5 @@
+function testlint
+
+alert('Suppe');
+
+}
